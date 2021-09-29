@@ -19,3 +19,13 @@
     vertical-align: middle;
     font-size: 15pt;
 }
+
+.h2 {
+    font-size: 18pt;
+    text-align: center;
+    border: none;
+}
+
+.borderless {
+    border: none;
+}
