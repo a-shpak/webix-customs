@@ -7,9 +7,6 @@ webix.protoUI({
     getCount() { 
         return Object.keys(this.config.states).length;
     },
-    _clearCss(name) {
-        this.$view.className = this.$view.className.replace(' ' + name, '');
-    },
 }, webix.ui.button);
 
 // $init
@@ -37,8 +34,7 @@ function tsbuttonDefaultValues(config) {
 
 //nextState 
 function nextState() {
-    this._clearCss(this.config.colors[this.config.state]);
-    
+    webix.html.removeCss(this.getNode(), this.config.colors[this.config.state]);
     this.config.state = (this.config.state + 1) % this.getCount();
     this.config.value = this.config.states[this.config.state];
     
