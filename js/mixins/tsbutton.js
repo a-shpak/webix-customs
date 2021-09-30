@@ -15,7 +15,7 @@ webix.protoUI({
 // $init
 function tsButtonInit(config) {
     console.log(config);
-    setDefaultValues(config);
+    tsbuttonDefaultValues(config);
     config.value = config.states[config.state];
     this.define("css", "button-state");
     config.css = config.colors[0];
@@ -23,13 +23,15 @@ function tsButtonInit(config) {
     this.attachEvent("onItemClick", function(id, e){
         this.nextState();
     });
-    function setDefaultValues(config) {
-        if (!isFieldValid(config.states)) {
-            config.states = { 0:"State 1", 1:"State 2", 2:"State 3" };
-        }
-        if (!isFieldValid(config.colors)) {
-            config.colors = { 0:"button-state-1", 1:"button-state-2", 2:"button-state-3" };
-        }
+}
+
+function tsbuttonDefaultValues(config) {
+    if (!isFieldValid(config.states)) {
+        webix.message({ type:"error", text:"Property 'States' is undefined" });
+        config.states = { 0:"State 1", 1:"State 2", 2:"State 3" };
+    }
+    if (!isFieldValid(config.colors)) {
+        config.colors = { 0:"button-state-1", 1:"button-state-2", 2:"button-state-3" };
     }
 }
 
