@@ -1,3 +1,5 @@
+import { isFieldValid } from "../helpers.js";
+
 webix.protoUI({
     name:"tsbutton",
     $init:tsButtonInit,
@@ -22,10 +24,10 @@ function tsButtonInit(config) {
         this.nextState();
     });
     function setDefaultValues(config) {
-        if (!config.states) {
+        if (!isFieldValid(config.states)) {
             config.states = { 0:"State 1", 1:"State 2", 2:"State 3" };
         }
-        if (!config.colors) {
+        if (!isFieldValid(config.colors)) {
             config.colors = { 0:"button-state-1", 1:"button-state-2", 2:"button-state-3" };
         }
     }
