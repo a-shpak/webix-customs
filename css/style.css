@@ -1,0 +1,31 @@
+.button-state {
+    border-radius:20px;
+}
+
+.button-state-1 .webix_button {
+    background-color: #CFFFCF;
+}
+
+.button-state-2 .webix_button {
+    background-color: #FFCDCD;
+}
+
+.button-state-3 .webix_button {
+    background-color: #FFFFE0;
+}
+
+.title {
+    border: none;
+    vertical-align: middle;
+    font-size: 15pt;
+}
+
+.h2 {
+    font-size: 18pt;
+    text-align: center;
+    border: none;
+}
+
+.borderless {
+    border: none;
+}
