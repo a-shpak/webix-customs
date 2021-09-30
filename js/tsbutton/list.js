@@ -11,7 +11,7 @@ export const list = {
     type:{
         height:60,
     },
-    data:items,
+    data:webix.copy(items),
     template:"<span style=\"font-weight:bold;\">#id#. #title#</span><div>Year: #year#, rank:#rank#</div>",
     autoheight:true,
 };

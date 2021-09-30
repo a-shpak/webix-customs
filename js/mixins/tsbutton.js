@@ -12,6 +12,7 @@ webix.protoUI({
 
 // $init
 function tsButtonInit(config) {
+    console.log(config);
     setDefaultValues(config);
     config.value = config.states[config.state];
     this.define("css", "button-state");
@@ -20,13 +21,13 @@ function tsButtonInit(config) {
     this.attachEvent("onItemClick", function(id, e){
         this.nextState();
     });
-}
-function setDefaultValues(config) {
-    if (!config.states) {
-        config.states = { 0:"State 1", 1:"State 2", 2:"State 3" };
-    }
-    if (!config.colors) {
-        config.colors = { 0:"button-state-1", 1:"button-state-2", 2:"button-state-3" };
+    function setDefaultValues(config) {
+        if (!config.states) {
+            config.states = { 0:"State 1", 1:"State 2", 2:"State 3" };
+        }
+        if (!config.colors) {
+            config.colors = { 0:"button-state-1", 1:"button-state-2", 2:"button-state-3" };
+        }
     }
 }
 
